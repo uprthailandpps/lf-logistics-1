@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>Class Page</title>
+  </head>
+  <style>
+    body{
+      width:100%;
+      height: 100vh;
+    }
+    iframe{
+      width:100%;
+      height: 100%;
+    }
+  </style>
+  <body>
+
+    <iframe src="https://script.google.com/macros/s/AKfycbwq8zR17Wx9quz70u3RcUVQyWKlMNq9SujX9LpISia7J0e60sDSlC_6cYLN87anltXJ/exec" frameborder="0"></iframe>
+
+  </body>
+</html>
