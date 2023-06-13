@@ -12,6 +12,7 @@
         height: 90vh;
         overflow: hidden;
         margin: 0;
+        justify-content: center;
         }
 
         div {
@@ -154,6 +155,7 @@
     var allowedRedirectURL = 'https://script.google.com/macros/s/AKfycbwq8zR17Wx9quz70u3RcUVQyWKlMNq9SujX9LpISia7J0e60sDSlC_6cYLN87anltXJ/exec';
     if (document.referrer !== allowedRedirectURL) {
       alert('กรุณาเข้าสู่ระบบ');
+        Console.log(document.referrer)
       window.location.href = allowedRedirectURL;
     } else {
         document.body.style.overflow = "hidden";
