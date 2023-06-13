@@ -9,7 +9,7 @@
     <style>
         body {
         display: flex;
-        height: 80vh;
+        height: 100vh;
         overflow: hidden;
         margin: 0;
         }
@@ -21,7 +21,7 @@
 
         #left {
         width: 320px;
-        height: 100%;
+        height: 90%;
         background-color: white;
         top: 0;
         left: 0;
@@ -104,7 +104,7 @@
 
         #right {
         width: calc(100% - 320px);
-        height: 100%;
+        height: 90%;
         position: absolute;
         top: 0;
         right: 0;
@@ -149,35 +149,41 @@
   </div>
 
   <script>
-    document.body.style.overflow = "hidden";
-    const toggleBtn = document.getElementById("toggle");
-    const leftDiv = document.getElementById("left");
-    const middleDiv = document.getElementById("middle");
-    const rightDiv = document.getElementById("right");
 
-    toggleBtn.addEventListener("click", () => {
-    leftDiv.classList.toggle("hidden");
-    middleDiv.classList.toggle("move");
-    rightDiv.classList.toggle("expanded");
-    });
-
-    var currentDate = new Date();
-    var formattedDate = currentDate.toISOString().split('T')[0];
-    var prefilledLink = ' https://docs.google.com/forms/d/e/1FAIpQLScSZR0u2L0TwGSXshFxR1QXTNDb5dM_PHMb5_qNJ6nmWlSJKg/viewform?usp=pp_url&entry.1725689597=' + formattedDate + '&entry.1071237925=LF+Rayong&entry.916284258=%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87&entry.1300212247=%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%A5%E0%B8%97%E0%B9%84%E0%B8%A1%E0%B9%89+4-way';
-    var iframe = document.getElementById('form');
-    iframe.src = prefilledLink;
-      
-    if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                  document.getElementById("right").style.display = "none";
-                  document.getElementById("middle").style.display = "none";
-                  document.getElementById("left").style.width = "100%";
-                }
  
     var allowedRedirectURL = 'https://uprthailandpps.github.io/lf-logistics/';
-            if (document.referrer !== allowedRedirectURL) {
-                alert('กรุณาเข้าสู่ระบบ');
-                window.location.href = allowedRedirectURL;
-            }
+
+    var isAuthenticated = sessionStorage.getItem('authenticated');
+    if (!isAuthenticated) {
+      // User is not authenticated, show alert and redirect
+      alert('กรุณาเข้าสู่ระบบ');
+      window.location.href = allowedRedirectURL;
+    } else {
+        document.body.style.overflow = "hidden";
+        const toggleBtn = document.getElementById("toggle");
+        const leftDiv = document.getElementById("left");
+        const middleDiv = document.getElementById("middle");
+        const rightDiv = document.getElementById("right");
+
+        toggleBtn.addEventListener("click", () => {
+        leftDiv.classList.toggle("hidden");
+        middleDiv.classList.toggle("move");
+        rightDiv.classList.toggle("expanded");
+        });
+
+        var currentDate = new Date();
+        var formattedDate = currentDate.toISOString().split('T')[0];
+        var prefilledLink = ' https://docs.google.com/forms/d/e/1FAIpQLScSZR0u2L0TwGSXshFxR1QXTNDb5dM_PHMb5_qNJ6nmWlSJKg/viewform?usp=pp_url&entry.1725689597=' + formattedDate + '&entry.1071237925=LF+Rayong&entry.916284258=%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87&entry.1300212247=%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%A5%E0%B8%97%E0%B9%84%E0%B8%A1%E0%B9%89+4-way';
+        var iframe = document.getElementById('form');
+        iframe.src = prefilledLink;
+
+        if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                      document.getElementById("right").style.display = "none";
+                      document.getElementById("middle").style.display = "none";
+                      document.getElementById("left").style.width = "100%";
+                    }
+    }
+
 
   </script>
 </body>
