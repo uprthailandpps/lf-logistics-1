@@ -9,10 +9,9 @@
     <style>
         body {
         display: flex;
-        height: 90vh;
+        height: 95vh;
         overflow: hidden;
-        margin: 0;
-        justify-content: center;
+        margin: 8;
         }
 
         div {
@@ -22,7 +21,7 @@
 
         #left {
         width: 320px;
-        height: 90%;
+        height: 100%;
         background-color: white;
         top: 0;
         left: 0;
@@ -68,9 +67,8 @@
         #middle {
         height: 100%;
         width: 10px;
-        position: absolute;
         top: 0;
-        left: 321px;
+        left: 10px;
         z-index: 2;
         display: flex;
         justify-content: center;
@@ -105,10 +103,9 @@
 
         #right {
         width: calc(100% - 320px);
-        height: 90%;
-        position: absolute;
+        height: 100%;
         top: 0;
-        right: 0;
+        right: -10px;
         z-index: 1;
         transition: opacity 0.5s ease-in-out;
         }
