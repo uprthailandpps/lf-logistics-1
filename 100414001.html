@@ -115,7 +115,7 @@
         width: 100%;
         }
         
-        .iframe-overlay{
+/*         .iframe-overlay{
         width: 35px;
         height: 35px;
         background-color: #EDF2FA;
@@ -123,7 +123,7 @@
         z-index: 1;
         top: 10px;
         right: 27px;
-        }
+        } */
         
         #sheet{
         height: 100%;
@@ -142,7 +142,7 @@
     </button>
   </div>
   <div id="right">
-    <div class="iframe-overlay" id="overlay"></div>
+<!--     <div class="iframe-overlay" id="overlay"></div> -->
     <iframe id="sheet" frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/1mzPCXe1qU2V6c843HZ-VORC5tClYqBfCgKiqRxAR9KY/edit?usp=sharing&amp;widget=false&amp;" allowfullscreen="">
     </iframe>
   </div>
@@ -162,7 +162,7 @@
 
     var currentDate = new Date();
     var formattedDate = currentDate.toISOString().split('T')[0];
-    var prefilledLink = ' https://docs.google.com/forms/d/e/1FAIpQLScSZR0u2L0TwGSXshFxR1QXTNDb5dM_PHMb5_qNJ6nmWlSJKg/viewform?usp=pp_url&entry.1725689597=' + formattedDate + '&entry.1071237925=LF+Rayong&entry.916284258=%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87&entry.1300212247=%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%A5%E0%B8%97%E0%B9%84%E0%B8%A1%E0%B9%89+4-way';
+    var prefilledLink = 'https://docs.google.com/forms/d/e/1FAIpQLScSZR0u2L0TwGSXshFxR1QXTNDb5dM_PHMb5_qNJ6nmWlSJKg/viewform?usp=pp_url&entry.1725689597=' + formattedDate + '&entry.1071237925=LF+Rayong&entry.916284258=%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87&entry.1300212247=%E0%B8%9E%E0%B8%B2%E0%B9%80%E0%B8%A5%E0%B8%97%E0%B9%84%E0%B8%A1%E0%B9%89+4-way';
     var iframe = document.getElementById('form');
     iframe.src = prefilledLink;
       
